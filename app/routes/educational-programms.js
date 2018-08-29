@@ -67,7 +67,6 @@ export default Ember.Route.extend({
           attributes:{
             name: 'first',
             description: 'not very difficult semestr',
-            eps:[ep2,ep4]
           }
         },
         {
@@ -76,11 +75,15 @@ export default Ember.Route.extend({
           attributes:{
             name: 'second',
             description: 'very difficult semestr',
-            eps:[ep1,ep3,ep5]
           }
         }
       ]
     });
+    var sem1=this.store.peekRecord('semestr',1);
+    sem1.set('eps',[ep2,ep4]);
+
+    var sem2=this.store.peekRecord('semestr',2);
+    sem2.set('eps',[ep1,ep3,ep5]);
 
 
     return this.store.findAll('semestr');

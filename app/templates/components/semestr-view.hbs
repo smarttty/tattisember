@@ -1,5 +1,9 @@
 <h1>{{semestr.name}}</h1>
 <h2>{{semestr.description}}</h2>
-{{#each semestr.eps as |ep|}}
-  <h3>{{ep.name}}</h3>
-{{/each}}
+{{#sortable-objects sortableObjectList=semestr.eps enableSort=true }}
+  {{#each semestr.eps as |item|}}
+    {{#draggable-object content=item overrideClass='inline' isSortable=true }}
+      {{item.name}}
+    {{/draggable-object}}
+  {{/each}}
+{{/sortable-objects}}
