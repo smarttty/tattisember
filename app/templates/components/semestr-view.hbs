@@ -1,0 +1,14 @@
+<div class="semestr_view">
+<h1>{{semestr.name}} semestr</h1>
+<h2 class='description'>{{semestr.description}}</h2>
+<p class='description'>The beggining: {{semestr.dateBegin}}</p>
+<p class='description'>The end: {{semestr.dateEnd}}</p>
+{{#sortable-objects sortableObjectList=semestr.eps enableSort=true }}
+  {{#each semestr.eps as |item|}}
+    {{#draggable-object content=item overrideClass='inline texting' isSortable=true }}
+      {{item.name}}
+    {{/draggable-object}}
+  {{/each}}
+{{/sortable-objects}}
+<button  class="button" {{action 'saveSem'}}>Save</button>
+</div>
