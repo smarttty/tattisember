@@ -1581,7 +1581,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("my-own/app")["default"].create({"name":"my-own","version":"0.0.0+942425fa"});
+  require("my-own/app")["default"].create({"name":"my-own","version":"0.0.0+9b366c6a"});
 }
 
 /* jshint ignore:end */
